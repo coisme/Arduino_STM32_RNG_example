@@ -1,5 +1,5 @@
 /*
- * STM32L4 series Random Number Generator (RNG) test.
+ * STM32 series Random Number Generator (RNG) test.
  * 
  * @author: Osamu Koizumi
  * 
@@ -11,9 +11,16 @@
  * Usage of RNG driver:
  * https://github.com/stm32duino/Arduino_Core_STM32/blob/052a49af1615fb5468ef603a0213d490d810afa2/system/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rng.c#L24-L35
  *
- * Tested on B-L475E-IOT01A board, STM32L475VGT6 MCU.
+ * Tested with:
+ *   B-L475E-IOT01A board, STM32L475VGT6 MCU
+ *   Arduino IDE v2.1.0
+ *   STM32 MCU based boards v2.5.0
  */
 #include "stm32yyxx_hal_conf.h"
+
+#ifndef RNG
+#error "RNG is not defined. Does your target have RNG module?"
+#endif /* RNG */
 
 RNG_HandleTypeDef rng_handler;
 
